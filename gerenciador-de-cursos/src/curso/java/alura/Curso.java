@@ -1,13 +1,13 @@
 package curso.java.alura;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Curso {
     private String nome;
     private String instrutor;
     private List<Aula> aulas = new ArrayList<>();
+
+    private Set<Aluno> alunos = new HashSet<>();
 
     public Curso(String nome, String instrutor) {
         this.nome = nome;
@@ -43,5 +43,13 @@ public class Curso {
     @Override
     public String toString() {
         return "[Curso: " + this.nome + ", tempo total: " + this.getTempoTotal() + ", Aulas: " + this.aulas + "]";
+    }
+
+    public void matricula(Aluno aluno){
+        this.alunos.add(aluno);
+    }
+
+    public Set<Aluno> getAlunos() {
+        return Collections.unmodifiableSet(alunos);
     }
 }
