@@ -1,5 +1,8 @@
 package curso.java.alura;
 
+import java.util.Iterator;
+import java.util.Set;
+
 public class TestaCursoComAluno {
 
     public static void main(String[] args) {
@@ -32,6 +35,12 @@ public class TestaCursoComAluno {
         System.out.println("O a1 é equals ao Turini?");
         System.out.println(a1.equals(turini));
 
+        // forma antiga de se iterar, antes da existencia do laço foreach
+        Set<Aluno> alunos = javaColecoes.getAlunos();
+        Iterator<Aluno> iterador = alunos.iterator();
 
+        while (iterador.hasNext()) {
+            System.out.println(iterador.next());
+        }
     }
 }
